@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<meta charset="UTF-8">
+<title>Update Info</title>
+</head>
+<body>
+<form action="#" th:action="@{/phone-update}" th:object="${phone}" method="post">
+    <label for="id">ID</label>
+    <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
+    <br/>
+    <label for="manufacturer">Manufacturer</label>
+    <input type="text" th:field="*{manufacturer}" id="manufacturer" placeholder="manufacturer">
+    <br/>
+    <label for="model">Model</label>
+    <input type="text" th:field="*{model}" id="model" placeholder="model">
+    <br/>
+    <br/>
+    <label for="releaseYear">Release Year</label>
+    <input type="text" th:field="*{releaseYear}" id="releaseYear" placeholder="releaseYear">
+    <br/>
+    <input type="submit" value="Update Phone">
+</form>
+</body>
+</html>

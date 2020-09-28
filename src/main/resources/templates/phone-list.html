@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Phones</title>
+</head>
+<body>
+<div th:switch="${phones}">
+    <h2 th:case="null">No phones found!</h2>
+    <div th:case="*">
+        <h2>Phones</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Manufacturer</th>
+                <th>Model</th>
+                <th>Release Year</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="phone : ${phones}">
+                <td th:text="${phone.id}"></td>
+                <td th:text="${phone.manufacturer}"></td>
+                <td th:text="${phone.model}"></td>
+                <td th:text="${phone.releaseYear}"></td>
+                <td><a th:href="@{phone-update/{id}(id=${phone.id})}">Edit</a></td>
+                <td><a th:href="@{phone-delete/{id}(id=${phone.id})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/phone-create">Add phone to Database</a></p>
+</div>
+</body>
+</html>

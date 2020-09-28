@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Phone</title>
+</head>
+<body>
+<form action="#" th:action="@{/phone-create}" th:object="${phone}" method="post">
+    <label for="manufacturer">manufacturer</label>
+    <input type="text" th:field="*{manufacturer}" id="manufacturer" placeholder="manufacturer">
+    <label for="model">model</label>
+    <input type="text" th:field="*{model}" id="model" placeholder="model">
+    <label for="releaseYear">releaseYear</label>
+    <input type="text" th:field="*{releaseYear}" id="releaseYear" placeholder="releaseYear">
+    <input type="submit" value="Create Phone">
+</form>
+</body>
+</html>
